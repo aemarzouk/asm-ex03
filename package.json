@@ -1,5 +1,11 @@
 {
-"name": "Exercise02App",
-"version": "1.0",
-"description": "A nodejs app for Bluemix"
+	"name": "Exercise02",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"cfenv": "1.0.x"
+	},
+	"engines": {
+		"node": "4.x"
+	} 
 }
