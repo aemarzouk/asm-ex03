@@ -2,7 +2,7 @@ applications:
 - disk_quota: 1024M
 host: asm-ex02
 name: asm-ex02
-command: node weather-request.js
+command: node weather-caller.js
 path: .
 domain: mybluemix.net
 instances: 1
