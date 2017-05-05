@@ -21,7 +21,7 @@ exports.current = function(param, resultCallback) {
 					resultCallback(error.message);
 					return;
 				}
-				resultCallback(null, result);
+				resultCallback(null, result.current_observation.temp_f[0]);
 			});
 		});
 	};
