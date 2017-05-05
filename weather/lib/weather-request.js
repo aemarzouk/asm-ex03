@@ -1,5 +1,5 @@
 var http = require('http');
-
+var parseString = require('xml2js').parseString;
 
 
 exports.current = function(param, resultCallback) {
@@ -16,13 +16,13 @@ exports.current = function(param, resultCallback) {
 			buffer += chunk;
 		});
 		weatherResponse.on('end', function() {
-			var body = buffer;
-			var matches = buffer.match(/\<temp_f\>.+\<\/temp_f\>/g);
-			if (null != matches && matches.length > 0) {
-				body =
-					matches[0].replace(/\<temp_f\>/, "").replace(/\<\/temp_f\>/, "");
-			}
-			resultCallback(null, body);
+			parseString(buffer, function(error, result) {
+				if (error) {
+					resultCallback(error.message);
+					return;
+				}
+				resultCallback(null, result);
+			});
 		});
 	};
 	var weatherRequest = http.request(options, weatherCallback);

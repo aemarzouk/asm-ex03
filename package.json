@@ -3,7 +3,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
-		"cfenv": "1.0.x"
+		"cfenv": "1.0.x",
+		        "xml2js": "*"
 	},
 	"engines": {
 		"node": "4.x"

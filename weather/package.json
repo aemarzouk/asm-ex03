@@ -1,4 +1,4 @@
 {
     "name": "weather",
-    "main": "./lib/weather-request"
+	"main": "./lib/weather-request"
 }

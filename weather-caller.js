@@ -17,11 +17,11 @@ var server = http.createServer(function(request, response) {
 			response.end();
 			return;
 		}
-		
+
 		response.writeHead(200, {
 			'Content-Type': 'text/plain'
 		});
-		response.write('The current weather reading is ' + temp_f +
+		response.write('The current weather reading is ' + JSON.stringify(temp_f) +
 			' degrees Fahrenheit');
 		response.end();
 	});
